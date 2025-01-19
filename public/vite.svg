@@ -1,0 +1,24 @@
+import React from 'react';
+
+const RedCodeIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="red"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M7 14l-4 4 4 4" />
+      <path d="M17 10l4-4-4-4" />
+      <path d="M14 7h7" />
+      <path d="M3 17h7" />
+    </svg>
+  );
+};
+
+export default RedCodeIcon;
