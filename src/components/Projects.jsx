@@ -57,7 +57,7 @@ const Projects = () => {
       title: "Task Management Dashboard",
       description: "Team collaboration and task management platform",
       longDescription: "Created a real-time task management system with team collaboration features and progress tracking.",
-      image: "https://via.placeholder.com/600x400?text=Task+Management+Dashboard",
+      image: "https://www.pk-anexcelexpert.com/wp-content/uploads/2024/08/Task-Management-Dashboard-1-1210x642.jpg",
       category: "frontend",
       technologies: ["React", "Firebase", "Material-UI", "Redux"],
       demoLink: "#",

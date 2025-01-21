@@ -20,13 +20,8 @@ const Navbar = () => {
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        {/* Navigation Links */}
-        <div
-          className={`${
-            isOpen ? "block" : "hidden"
-          } lg:flex space-y-4 lg:space-y-0 lg:space-x-6 text-white font-mono lg:items-center absolute lg:static top-16 left-0 w-full lg:w-auto bg-red-900/80 lg:bg-transparent p-6 lg:p-0`}
-        >
-            <div className='flex flex-col justify-center space-y-6'>
+        {/* Desktop Navigation Links */}
+        <div className="hidden lg:flex space-x-6 text-white font-mono lg:items-center">
           <a href="#home" className="hover:text-red-500 transition-colors">
             Home
           </a>
@@ -40,7 +35,25 @@ const Navbar = () => {
             Contact
           </a>
         </div>
-       
+
+        {/* Mobile Navigation Links */}
+        <div
+          className={`${
+            isOpen ? "block" : "hidden"
+          } lg:hidden space-y-6 text-white font-mono absolute top-16 left-0 w-full bg-red-900/80 p-6`}
+        >
+          <a href="#home" className="hover:text-red-500 transition-colors">
+            Home
+          </a>
+          <a href="#about" className="hover:text-red-500 transition-colors">
+            About
+          </a>
+          <a href="#projects" className="hover:text-red-500 transition-colors">
+            Projects
+          </a>
+          <a href="#contact" className="hover:text-red-500 transition-colors">
+            Contact
+          </a>
         </div>
       </div>
     </nav>

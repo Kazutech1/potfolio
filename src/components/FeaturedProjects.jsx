@@ -8,7 +8,7 @@ const FeaturedProjects = () => {
   return (
     <div>  <section className="py-20 bg-gradient-to-b from-black to-red-950">
     <div className="container mx-auto px-4">
-      <h2 className="text-4xl font-bold mb-16 flex items-center">
+      <h2 className="text-4xl font-bold mb-16 flex items-center text-white">
         <Terminal className="text-red-500 mr-4" />
         FEATURED PROJECTS
         <div className="h-px bg-red-600 flex-grow ml-4"></div>

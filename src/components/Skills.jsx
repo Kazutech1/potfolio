@@ -11,7 +11,7 @@ const Skills = () => {
   };
 
   return (
-    <div>
+    <div className='text-white'>
       <section className="py-20 bg-black relative">
         <div className="absolute inset-0 bg-red-900/5"></div>
         <div className="container mx-auto px-4 relative">

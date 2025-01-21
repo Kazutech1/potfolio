@@ -34,7 +34,7 @@ const AboutMe = () => {
     ];
 
     return (
-        <div>
+        <div className='text-white'>
             <section id="about" className="py-20 bg-gradient-to-b from-black to-red-950 relative">
                 <div className="container mx-auto px-4">
                     <h2 className="text-4xl font-bold mb-16 flex items-center">
