@@ -1,14 +1,7 @@
-import React, { useState } from 'react';
-import { 
-    User,
-    Book,
-    Clock,
-    Coffee
-} from 'lucide-react';
+import React from 'react';
+import { User, Book, Clock, Coffee } from 'lucide-react';
 
 const AboutMe = () => {
-    const [activeTab, setActiveTab] = useState('skills');
-
     const skills = {
         Frontend: ['React', 'React Native', 'Vue.js', 'TypeScript', 'Tailwind CSS', 'HTML5', 'CSS3', 'JavaScript'],
         Backend: ['Node.js', 'Python', 'Java', 'Go', 'Express', 'REST APIs'],
@@ -23,7 +16,7 @@ const AboutMe = () => {
     ];
 
     return (
-        <div className='text-white'>
+        <div className="text-white">
             <section id="about" className="py-20 bg-gradient-to-b from-black to-red-950 relative">
                 <div className="container mx-auto px-4">
                     <h2 className="text-4xl font-bold mb-16 flex items-center">
@@ -33,11 +26,11 @@ const AboutMe = () => {
                     </h2>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        {/* Left Column - Personal Info */}
+                        {/* Left Column */}
                         <div className="space-y-8 border-l-4 border-red-600 pl-6">
                             <h3 className="text-2xl font-bold mb-4">Umeh Chibuike Emmanuel</h3>
                             <p className="text-gray-300 mb-4">
-                                Passionate Full Stack Developer with 2+ years experience in building scalable web applications and leading development teams. Based in Port Harcourt, Nigeria.
+                                Passionate Full Stack Developer with 3+ years experience in building scalable web applications and leading development teams. Based in Port Harcourt, Nigeria.
                             </p>
                             <div className="grid grid-cols-2 gap-4 text-sm">
                                 <div>
@@ -46,7 +39,7 @@ const AboutMe = () => {
                                 </div>
                                 <div>
                                     <strong className="text-red-500">Experience:</strong>
-                                    <p>2+ Years</p>
+                                    <p>3+ Years</p>
                                 </div>
                                 <div>
                                     <strong className="text-red-500">Available for:</strong>
@@ -59,31 +52,23 @@ const AboutMe = () => {
                             </div>
                         </div>
 
-                        {/* Right Column - Skills */}
-                        <div className="space-y-8">
-                            <div className="flex space-x-4 border-b border-red-900/30">
-                                <button
-                                    onClick={() => setActiveTab('skills')}
-                                    className={`pb-2 px-4 capitalize ${activeTab === 'skills' ? 'text-red-500 border-b-2 border-red-500' : 'text-gray-400 hover:text-gray-300'}`}
-                                >
-                                    Skills
-                                </button>
-                            </div>
-
-                            {activeTab === 'skills' && (
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    {Object.keys(skills).map((category, idx) => (
-                                        <div key={idx} className="bg-black/70 backdrop-blur-md border border-red-900/30 p-6 rounded-xl shadow-md">
-                                            <h4 className="text-xl font-bold mb-4 text-red-500">{category}</h4>
-                                            <ul className="space-y-2">
-                                                {skills[category].map((skill, i) => (
-                                                    <li key={i} className="text-gray-200">• {skill}</li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    ))}
+                        {/* Right Column - Skills as badges */}
+                        <div className="space-y-6">
+                            {Object.keys(skills).map((category, idx) => (
+                                <div key={idx}>
+                                    <h4 className="text-xl font-bold mb-3 text-red-500">{category}</h4>
+                                    <div className="flex flex-wrap gap-2">
+                                        {skills[category].map((skill, i) => (
+                                            <span
+                                                key={i}
+                                                className="bg-red-900/30 text-red-200 px-3 py-1 rounded-full text-sm font-medium hover:bg-red-600 transition-colors"
+                                            >
+                                                {skill}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </div>
-                            )}
+                            ))}
                         </div>
                     </div>
                 </div>
