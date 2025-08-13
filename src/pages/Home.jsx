@@ -14,13 +14,13 @@ const Home = () => {
     document.title = "Kaz Tech Portfolio";
   }, []);
 
-  const subtleTransition = { duration: 0.6, ease: 'easeOut' };
+  const subtleTransition = { duration: 0.5, ease: 'easeOut' };
 
   return (
     <div>
       <Navbar />
 
-      {/* Header - Subtle Fade */}
+      {/* Header */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -29,27 +29,27 @@ const Home = () => {
         <Header />
       </motion.div>
 
-      {/* Featured Projects - Slight Scale */}
+      {/* Featured Projects */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.97 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={subtleTransition}
         viewport={{ once: true }}
       >
         <FeaturedProjects />
       </motion.div>
 
-      {/* Skills - Slight Slide Left */}
+      {/* Skills */}
       <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={subtleTransition}
         viewport={{ once: true }}
       >
         <Skills />
       </motion.div>
 
-      {/* About Me - Fade In */}
+      {/* About Me */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -59,17 +59,17 @@ const Home = () => {
         <AboutMe />
       </motion.div>
 
-      {/* Projects - Slight Slide Right */}
+      {/* Projects */}
       <motion.div
-        initial={{ opacity: 0, x: 20 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={subtleTransition}
         viewport={{ once: true }}
       >
         <Projects />
       </motion.div>
 
-      {/* Contact - Simple Fade */}
+      {/* Contact */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -79,10 +79,10 @@ const Home = () => {
         <Contact />
       </motion.div>
 
-      {/* Footer - Slight Fade and Scale */}
+      {/* Footer */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.98 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={{ ...subtleTransition, delay: 0.2 }}
         viewport={{ once: true }}
       >
