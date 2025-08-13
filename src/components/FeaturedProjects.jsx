@@ -23,7 +23,7 @@ const FeaturedProjects = () => {
       name: "VeltoHQ",
       description: "Lightweight ERP for businesses",
       technologies: ["React", "Node.js", "MongoDB"],
-      image: "https://via.placeholder.com/600x400?text=VeltoHQ",
+      image: "https://via.placeholder.com/600x400/ff0000/ffffff?text=VeltoHQ+ERP", // working placeholder
       link: "https://veltohq.vercel.app"
     }
   ];
@@ -41,7 +41,7 @@ const FeaturedProjects = () => {
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="group relative border border-red-900/50 bg-black/50 backdrop-blur-sm overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="group relative border border-red-900/50 bg-black/50 backdrop-blur-sm overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
               onMouseEnter={() => setHoveredProject(idx)}
               onMouseLeave={() => setHoveredProject(null)}
             >
@@ -56,7 +56,7 @@ const FeaturedProjects = () => {
                   <p className="text-red-400 mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, i) => (
-                      <span key={i} className="bg-red-900/50 px-3 py-1 text-sm rounded-full text-white">{tech}</span>
+                      <span key={i} className="bg-red-900/50 px-3 py-1 text-sm text-white">{tech}</span>
                     ))}
                   </div>
                   <a
