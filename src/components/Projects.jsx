@@ -74,7 +74,7 @@ const Projects = () => {
           {currentProjects.map(project => (
             <div
               key={project.id}
-              className="relative border-4 border-red-600 bg-black/80 rounded-xl p-6 hover:scale-105 transform transition-all duration-300 shadow-2xl shadow-red-900/50"
+              className="relative border-2 border-red-600 bg-black/80  p-6 hover:scale-105 transform transition-all duration-300 shadow-2xl shadow-red-900/50"
             >
               <div className="flex items-center justify-between mb-3">
                 <h3 className="text-red-500 text-lg font-bold">{project.name}</h3>
