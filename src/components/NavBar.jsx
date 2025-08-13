@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-red-900/20 backdrop-blur-md fixed w-full z-50">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between relative">
         {/* Logo */}
         <div className="text-red-600 text-3xl font-bold uppercase">
           Kaztech
@@ -37,24 +37,22 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation Links */}
-        <div
-          className={`${
-            isOpen ? "block" : "hidden"
-          } lg:hidden space-y-6 text-white font-mono absolute top-16 left-0 w-full bg-red-900/80 p-6`}
-        >
-          <a href="#home" className="hover:text-red-500 transition-colors">
-            Home
-          </a>
-          <a href="#about" className="hover:text-red-500 transition-colors">
-            About
-          </a>
-          <a href="#projects" className="hover:text-red-500 transition-colors">
-            Projects
-          </a>
-          <a href="#contact" className="hover:text-red-500 transition-colors">
-            Contact
-          </a>
-        </div>
+        {isOpen && (
+          <div className="lg:hidden flex flex-col space-y-4 text-white font-mono absolute top-full left-0 w-full bg-red-900/80 p-6">
+            <a href="#home" className="hover:text-red-500 transition-colors">
+              Home
+            </a>
+            <a href="#about" className="hover:text-red-500 transition-colors">
+              About
+            </a>
+            <a href="#projects" className="hover:text-red-500 transition-colors">
+              Projects
+            </a>
+            <a href="#contact" className="hover:text-red-500 transition-colors">
+              Contact
+            </a>
+          </div>
+        )}
       </div>
     </nav>
   );
