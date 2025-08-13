@@ -1,8 +1,44 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Twitter, MessageCircleCode } from 'lucide-react';
-import profile from '../assets/profile.jpeg'
+import profile from '../assets/profile.jpeg';
 
 const Header = () => {
+  const words = ['Full Stack Developer', 'React Developer', 'Mobile & Web Dev']; // words to type
+  const [text, setText] = useState('');
+  const [wordIndex, setWordIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    const typeSpeed = 100;
+    const deleteSpeed = 50;
+    const pause = 1500;
+
+    const handleTyping = () => {
+      const currentWord = words[wordIndex];
+      if (!deleting) {
+        setText(currentWord.slice(0, charIndex + 1));
+        if (charIndex + 1 === currentWord.length) {
+          setTimeout(() => setDeleting(true), pause);
+        } else {
+          setCharIndex(charIndex + 1);
+        }
+      } else {
+        setText(currentWord.slice(0, charIndex - 1));
+        if (charIndex - 1 === 0) {
+          setDeleting(false);
+          setWordIndex((wordIndex + 1) % words.length);
+          setCharIndex(0);
+        } else {
+          setCharIndex(charIndex - 1);
+        }
+      }
+    };
+
+    const timer = setTimeout(handleTyping, deleting ? deleteSpeed : typeSpeed);
+    return () => clearTimeout(timer);
+  }, [charIndex, deleting, wordIndex]);
+
   return (
     <header id="home" className="relative min-h-screen overflow-hidden">
       <div className="absolute inset-0 bg-red-900/20"></div>
@@ -17,50 +53,55 @@ const Header = () => {
                 Kaz Tech
                 <span className="text-red-600">/&gt;</span>
               </h1>
-              <h2 className="text-3xl text-red-500 mb-6 font-mono">Full Stack Developer</h2>
+              <h2 className="text-3xl text-red-500 mb-6 font-mono">
+                {text}
+                <span className="blinking-cursor">|</span>
+              </h2>
             </div>
             <p className="text-xl mb-8 max-w-2xl font-mono opacity-80 text-white">
               $ Building robust solutions with cutting-edge technology_
             </p>
+            {/* Social Icons */}
             <div className="flex space-x-6 text-white">
-            <a 
-  href="https://github.com/kazutech1" 
-  className="bg-red-900/30 p-3 rounded-lg hover:bg-red-800 transition-colors"
-  target="_blank" 
-  rel="noopener noreferrer"
->
-  <Github size={24} />
-</a>
+              <a href="https://github.com/kazutech1" className="bg-red-900/30 p-3 rounded-lg hover:bg-red-800 transition-colors" target="_blank" rel="noopener noreferrer">
+                <Github size={24} />
+              </a>
               <a href="https://x.com/Kaztech0?t=AgxXurA4HiTnJ54cFzf3Aw&s=09" className="bg-red-900/30 p-3 rounded-lg hover:bg-red-800 transition-colors">
                 <Twitter size={24} />
               </a>
-              <a 
-  href="mailto:kaztech069@gmail.com" 
-  className="bg-red-900/30 p-3 rounded-lg hover:bg-red-800 transition-colors"
->
-  <Mail size={24} />
-</a>
-
+              <a href="mailto:kaztech069@gmail.com" className="bg-red-900/30 p-3 rounded-lg hover:bg-red-800 transition-colors">
+                <Mail size={24} />
+              </a>
               <a href="https://wa.me/2348068539935" className="bg-red-900/30 p-3 rounded-lg hover:bg-red-800 transition-colors">
                 <MessageCircleCode size={24} />
-               
               </a>
             </div>
           </div>
 
-          {/* Right Section: Profile Picture */}
+          {/* Right Section */}
           <div className="lg:w-1/3 mt-8 lg:mt-0 flex justify-center lg:justify-end">
-  <div className="w-72 h-72 rounded-full overflow-hidden shadow-lg border-4 border-red-600">
-    <img 
-      src={profile} 
-      alt="Profile" 
-      className="w-full h-full object-cover"
-    />
-  </div>
-</div>
-
+            <div className="w-72 h-72 rounded-full overflow-hidden shadow-lg border-4 border-red-600">
+              <img src={profile} alt="Profile" className="w-full h-full object-cover" />
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* Cursor animation */}
+      <style>
+        {`
+          .blinking-cursor {
+            font-weight: 100;
+            font-size: 24px;
+            color: red;
+            animation: blink 1s infinite;
+          }
+          @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0; }
+          }
+        `}
+      </style>
     </header>
   );
 };
