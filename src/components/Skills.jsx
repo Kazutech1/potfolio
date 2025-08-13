@@ -3,7 +3,7 @@ import { Code } from 'lucide-react';
 
 const Skills = () => {
   const techStack = {
-    Frontend: ['React', 'Next.js', 'Tailwind CSS', 'HTML5', 'CSS3', 'JavaScript'],
+    Frontend: ['React', 'React Native', 'Next.js', 'Tailwind CSS', 'HTML5', 'CSS3', 'JavaScript'],
     Backend: ['Node.js', 'Express', 'Python', 'REST APIs'],
     Database: ['MongoDB', 'MySQL', 'PostgreSQL'],
     DevOps: ['Docker', 'Git', 'CI/CD'],
