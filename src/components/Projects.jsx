@@ -46,7 +46,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-gradient-to-b from-black to-red-950">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 flex items-center">
+        <h2 className="text-4xl text-white font-bold mb-12 flex items-center">
           <Terminal className="text-red-500 mr-4" />
           PROJECTS
           <div className="h-px bg-red-600 flex-grow ml-4"></div>
