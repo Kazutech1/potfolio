@@ -8,7 +8,7 @@ const FeaturedProjects = () => {
     {
       name: "Crypto Investment Platform",
       description: "Full-stack solution with React, Node.js, and MongoDB",
-      technologies: ["React", "Node.js", "MongoDB"],
+      technologies: ["React", "Node.js", "MongoDB", "Tron Web"],
       image: "https://vulcanpost.com/wp-content/uploads/2022/04/Matrixport-article-005.jpg",
       link: "https://cryptowealth.onrender.com"
     },
@@ -22,8 +22,8 @@ const FeaturedProjects = () => {
     {
       name: "VeltoHQ",
       description: "Lightweight ERP for businesses",
-      technologies: ["React", "Node.js", "MongoDB"],
-      image: "https://images.app.goo.gl/x5Gju1CLo5cbrAYUA", // working placeholder
+      technologies: ["React", "Node.js", "MongoDB", "TypeScript"],
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPGvSJ_g1IA1tDY6QwzEW18uhi-R6V14JJtA&usqp=CAU", // working placeholder
       link: "https://veltohq.vercel.app"
     }
   ];
