@@ -14,78 +14,47 @@ const Home = () => {
     document.title = "Kaz Tech Portfolio";
   }, []);
 
-  const subtleTransition = { duration: 0.5, ease: 'easeOut' };
+  const fadeScaleTransition = { duration: 0.6, ease: 'easeOut' };
+  const fadeScaleProps = {
+    initial: { opacity: 0, scale: 0.95 },
+    whileInView: { opacity: 1, scale: 1 },
+    viewport: { once: true },
+    transition: fadeScaleTransition
+  };
 
   return (
     <div>
       <Navbar />
 
       {/* Header */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={subtleTransition}
-      >
+      <motion.div {...fadeScaleProps}>
         <Header />
       </motion.div>
 
       {/* Featured Projects */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={subtleTransition}
-        viewport={{ once: true }}
-      >
+      <motion.div {...fadeScaleProps}>
         <FeaturedProjects />
       </motion.div>
 
-      {/* Skills */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={subtleTransition}
-        viewport={{ once: true }}
-      >
-        <Skills />
-      </motion.div>
+  
 
       {/* About Me */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={subtleTransition}
-        viewport={{ once: true }}
-      >
+      <motion.div {...fadeScaleProps}>
         <AboutMe />
       </motion.div>
 
       {/* Projects */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={subtleTransition}
-        viewport={{ once: true }}
-      >
+      <motion.div {...fadeScaleProps}>
         <Projects />
       </motion.div>
 
       {/* Contact */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ ...subtleTransition, delay: 0.1 }}
-        viewport={{ once: true }}
-      >
+      <motion.div {...fadeScaleProps}>
         <Contact />
       </motion.div>
 
       {/* Footer */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ ...subtleTransition, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
+      <motion.div {...fadeScaleProps}>
         <Footer />
       </motion.div>
     </div>
